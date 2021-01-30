@@ -1,0 +1,35 @@
+---
+language: staticfile
+default_versions:
+- name: nginx
+  version: 1.19.x
+dependencies:
+- name: nginx
+  version: 1.19.6
+  uri: https://buildpacks.cloudfoundry.org/dependencies/nginx-static/nginx-static_1.19.6_linux_x64_cflinuxfs3_aa3d3d5b.tgz
+  sha256: aa3d3d5beee6c5ffbea5b9c098f389943585dcca91b07eb68ae75847408e905d
+  cf_stacks:
+  - cflinuxfs3
+  source: http://nginx.org/download/nginx-1.19.6.tar.gz
+  source_sha256: b11195a02b1d3285ddf2987e02c6b6d28df41bb1b1dd25f33542848ef4fc33b5
+pre_package: scripts/build.sh
+include_files:
+- CHANGELOG
+- CONTRIBUTING.md
+- ISSUE_TEMPLATE
+- LICENSE
+- NOTICE
+- PULL_REQUEST_TEMPLATE
+- README.md
+- VERSION
+- bin/compile
+- bin/detect
+- bin/finalize
+- bin/release
+- bin/supply
+- manifest.yml
+dependency_deprecation_dates:
+- version_line: 1.19.x
+  name: nginx
+  date: 2021-05-01
+  link: https://nginx.org/
